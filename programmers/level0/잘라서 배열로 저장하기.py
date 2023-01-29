@@ -1,0 +1,5 @@
+from math import ceil
+
+
+def solution(my_str, n):
+  return [my_str[i * n: i * n + n] for i in range(ceil(len(my_str) / n))]
