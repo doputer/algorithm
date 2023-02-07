@@ -1,26 +1,18 @@
 def solution(word):
   order = 1
 
-  l = ['A', 'E', 'I', 'O', 'U', '']
+  table = {'A': 'E', 'E': 'I', 'I': 'O', 'O': 'U'}
   stack = ['A']
 
-  while ''.join(stack) != word:
+  while stack != list(word):
     order += 1
 
     if len(stack) < 5:
-      stack += 'A'
+      stack.append('A')
     else:
-      last = stack.pop()
-      last = l[l.index(last) + 1]
+      while stack[-1] == 'U':
+        stack.pop()
 
-      if last != '':
-        stack.append(last)
-      else:
-        while stack[-1] == 'U':
-          stack.pop()
-
-        last = stack.pop()
-        last = l[l.index(last) + 1]
-        stack.append(last)
+      stack.append(table[stack.pop()])
 
   return order
