@@ -1,20 +1,10 @@
-def dp(stock):
-  if len(stock) <= 1:
-    return 0
-
-  minimum = min(stock)
-  index = stock.index(minimum)
-
-  if index == 0:
-    return stock[-1] - stock[0]
-
-  left = dp(stock[:index])
-  right = dp(stock[index:])
-
-  return left if left > right else right
-
-
 n = int(input())
 stock = list(map(int, input().split()))
 
-print(dp(stock))
+maximum, profit = 0, 0
+
+for i in range(len(stock) - 1, -1, -1):
+  maximum = max(stock[i], maximum)
+  profit = max(maximum - stock[i], profit)
+
+print(profit)
