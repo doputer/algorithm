@@ -7,25 +7,25 @@ heap = []
 count = {}
 
 for _ in range(n):
-  x = int(sys.stdin.readline())
+    x = int(sys.stdin.readline())
 
-  if x:
-    heappush(heap, abs(x))
+    if x:
+        heappush(heap, abs(x))
 
-    if x < 0:
-      if -x in count:
-        count[-x] += 1
-      else:
-        count[-x] = 1
-  else:
-    if not heap:
-      print(0)
-      continue
-
-    x = heappop(heap)
-
-    if x in count and count[x] > 0:
-      count[x] -= 1
-      print(-x)
+        if x < 0:
+            if -x in count:
+                count[-x] += 1
+            else:
+                count[-x] = 1
     else:
-      print(x)
+        if not heap:
+            print(0)
+            continue
+
+        x = heappop(heap)
+
+        if x in count and count[x] > 0:
+            count[x] -= 1
+            print(-x)
+        else:
+            print(x)

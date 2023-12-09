@@ -9,10 +9,10 @@ rank = 0
 sorted_coords = sorted(coords)
 
 for i in range(n):
-  if i != 0 and sorted_coords[i] > sorted_coords[i-1]:
-    rank += 1
+    if i != 0 and sorted_coords[i] > sorted_coords[i - 1]:
+        rank += 1
 
-  if sorted_coords[i] not in ranks:
-    ranks[sorted_coords[i]] = rank
+    if sorted_coords[i] not in ranks:
+        ranks[sorted_coords[i]] = rank
 
 print(*[ranks[i] for i in coords])

@@ -8,13 +8,13 @@ n = len(a) * 2
 numbers = []
 
 for i in range(n // 2):
-  numbers.append(alphabet[a[i]])
-  numbers.append(alphabet[b[i]])
+    numbers.append(alphabet[a[i]])
+    numbers.append(alphabet[b[i]])
 
 while n > 2:
-  for i in range(n - 1):
-    numbers[i] = (numbers[i] + numbers[i + 1]) % 10
+    for i in range(n - 1):
+        numbers[i] = (numbers[i] + numbers[i + 1]) % 10
 
-  n -= 1
+    n -= 1
 
-print(''.join(list(map(str, numbers[:2]))))
+print("".join(list(map(str, numbers[:2]))))

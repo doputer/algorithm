@@ -6,9 +6,9 @@ b = set(map(int, input().split()))
 c = sorted(list(a - b))
 
 if len(c) == 0:
-  print(0)
+    print(0)
 else:
-  print(len(c))
+    print(len(c))
 
-  for i in c:
-    print(i, end=' ')
+    for i in c:
+        print(i, end=" ")
